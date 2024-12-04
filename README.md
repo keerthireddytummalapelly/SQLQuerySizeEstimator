@@ -5,28 +5,27 @@
 This program connects to a PostgreSQL database and performs the following operations to analyze the size of a natural join between two specified tables:
 
 ### 1. Estimated Join Size
+
 - The program estimates the size of the natural join between the two tables based on metadata and heuristics.
 - It uses database statistics, such as the number of rows and attributes, to calculate the estimated join size.
 - This estimation provides an approximation of the number of rows resulting from the natural join.
 
-
 ### 2. Actual Join Size
+
 - The program executes a SQL query to perform the natural join between the two tables.
 - It calculates the actual size of the resulting table by counting the rows in the join result.
 - This represents the true size of the join based on the data in the tables.
 
-
 ### 3. Estimation Error
-- The program calculates the difference between the Estimated Join Size and the Actual Join Size:
-  \[
-  \text{Estimation Error} = \text{Estimated Join Size} - \text{Actual Join Size}
-  \]
+
+- The program calculates the difference between the Estimated Join Size and the Actual Join Size: Estimation Error = Estimated Join Size - Actual Join Size
 - Positive Error: Indicates that the estimated size is larger than the actual size (overestimation).
 - Negative Error: Indicates that the estimated size is smaller than the actual size (underestimation).
 
-
 ### Key Outputs
+
 The program prints the following results:
+
 1. Estimated Join Size: An approximate number of rows from the join.
 2. Actual Join Size: The precise number of rows in the natural join.
 3. Estimation Error: A numerical value indicating the accuracy of the estimation.
